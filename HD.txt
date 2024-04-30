@@ -1,0 +1,77 @@
+
+
+
+
+
+
+
+
+PackUpdate.exe
+
+if(argc < 4) {
+	printf("usage: packUpdate [base pack file name] [pack directory] [pack file name]");
+	return 0;
+}
+
+
+if (ucl_init() != UCL_E_OK) return 0;
+
+//argv[1] ---- f:\\temp\\PackBase.pac
+//argv[2] ---- D:\\¹¤×÷\\sword_a1_small
+//argv[3] ---- F:\\temp\\PackUpdate1.pac
+
+char* baseFile = argv[1];
+//char* baseFile = "f:\\temp\\PackBase.pac";//argv[1];
+baseCache =new ZCache(65536 * 1024);
+basePack = new ZPackFileNT(baseFile, baseCache);
+baseHeader = basePack->GetHeader();
+
+pack(argv[2],argv[3]);
+//pack("D:\\¹¤×÷\\sword_a2_small"/*argv[2]*/,"F:\\temp\\PackUpdate1.pac"/*argv[3]*/);
+
+
+
+PackNew.exe
+
+
+	if(argc < 3) {
+		printf("usage: packNew [pack directory] [pack file name]");
+		return 0;
+	}
+
+	if (ucl_init() != UCL_E_OK) return 0;
+	//argv[1] ----- D:\\¹¤×÷\\sword_a1_small
+	//argv[2] ----- f:\\temp\\PackBase.pac
+	pack(argv[1],argv[2]);
+	//pack("D:\\¹¤×÷\\sword_a1_small","f:\\temp\\aaa.pac");
+	if(argc == 3) return 0;
+
+	cout<<"Press any key to begin test..."<<endl;
+	
+	
+PackExp.exe
+
+if(argc < 5) {
+	printf("usage: PackExp [base pack file] [previous version pack file] [present version pack file] [output pack file].\n");
+	return 0;
+}
+
+if (ucl_init() != UCL_E_OK) return 0;
+
+//argv[1] ----- f:\\temp\\PackBase.pac
+//argv[2] ----- f:\\temp\\PackUpdate1.pac
+//argv[3] ----- f:\\temp\\PackUpdate2.pac
+//argv[4] ----- f:\\temp\\Update1-2.pak
+
+
+	
+Packsingle.exe
+
+	if(argc < 2) {
+		printf("usage: packSingle [pack directory] [pack file name] [/c]\nwithout [pack file name], the pack file name will be the same of directory name\n/c to check the same id\n");
+		return 0;
+	}
+	
+	
+	
+	
