@@ -11,6 +11,6 @@ Pak &amp; Unpak Tool
 - Ví dụ : PackUpdate.exe D:\data.pak datasource datanew.pak <br/>
 * PackSingle.exe sourceDir filename <br/>
 - Ví dụ : PackSingle.exe D:\data data.pak <br/>
-* Source 
+* Source : là 4 tệp rar cùng tên. sử dụng visual studio 2022 để build.
 
 
